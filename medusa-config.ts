@@ -41,8 +41,8 @@ module.exports = defineConfig({
     databaseUrl: DATABASE_URL,
     ...(DEPLOYMENT_TYPE === 'local' ? {
       databaseDriverOptions: {
-        ssl: false,
-        sslmode: 'disable',
+        ssl: true,
+        sslmode: 'enable',
       },
     } : {}),
     redisUrl: REDIS_URL,
