@@ -23,10 +23,6 @@ COPY . .
 RUN npm run build
 
 FROM base AS runner
-RUN apt-get update \
-  && apt-get install --no-install-recommends -y tini=0.19.0-1+b3 \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 USER node
 WORKDIR /opt/medusa
