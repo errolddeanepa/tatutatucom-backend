@@ -39,7 +39,7 @@ RUN apt-get update \
 USER node
 WORKDIR /opt/medusa
 COPY --from=builder --chown=node:node /opt/medusa/build .
-ARG PORT=9000
+ARG PORT=10000
 ARG NODE_ENV=production
 ENV PORT=$PORT
 ENV NODE_ENV=$NODE_ENV

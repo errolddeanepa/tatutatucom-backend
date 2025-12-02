@@ -6,7 +6,7 @@ const DATABASE_URL = process.env.DATABASE_URL
 const REDIS_URL = process.env.REDIS_URL
 const DEPLOYMENT_TYPE = process.env.DEPLOYMENT_TYPE || 'local'
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:9000'
+const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:10000'
 const STORE_CORS = process.env.STORE_CORS || BACKEND_URL
 const ADMIN_CORS = process.env.ADMIN_CORS || BACKEND_URL
 const AUTH_CORS = process.env.AUTH_CORS || BACKEND_URL
@@ -41,11 +41,11 @@ module.exports = defineConfig({
     databaseUrl: DATABASE_URL,
     ...(DEPLOYMENT_TYPE === 'local' ? {
       databaseDriverOptions: {
-        ssl: true,
-        sslmode: 'enable',
+        ssl: false,
+        sslmode: 'disable',
       },
     } : {}),
-    redisUrl: REDIS_URL,
+    redisUrl: REDIS_URL,   
     http: {
       storeCors: STORE_CORS,
       adminCors: ADMIN_CORS,
