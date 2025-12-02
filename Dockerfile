@@ -34,5 +34,4 @@ ENV NODE_ENV=$NODE_ENV
 
 EXPOSE $PORT
 
-ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["./start.sh"]
