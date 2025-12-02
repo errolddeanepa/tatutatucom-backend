@@ -28,6 +28,7 @@ RUN \
   elif [ -f package-lock.json ]; then npm run build; \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
   fi
+RUN chmod +x start.sh
 
 FROM base AS runner
 RUN apt-get update \
